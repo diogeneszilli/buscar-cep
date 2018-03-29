@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="app" lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Consulta CEP</title>
+  </head>
+  <body>
+    <div class="container" ng-controller="app.CepController as vm">
+      <div class="row justify-content-center">
+        <h1 class="col-sm-6 display-4 text-center">Consulta de CEP</h1>
+        <div class="w-100"></div>
+            <form class="col-sm-6">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" ng-model="vm.cep" placeholder="CEP" aria-label="cep" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button type="button" ng-click="vm.consultar(vm.cep)" class="btn btn-block btn-secondary btn-primary">Consultar</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Logradouro:</label>
+                <input type="text" ng-model="vm.logradouro" class="form-control" id="logradouro" placeholder="Logradouro">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Bairro:</label>
+                <input type="text" ng-model="vm.bairro" class="form-control" id="bairro" placeholder="Bairro">
+              </div>
+
+                <div class="form-group row">
+                  <div class="col">
+                    <label for="nome">Cidade:</label>
+                    <input type="text" ng-model="vm.cidade" class="form-control col-sm-12" id="cidade" placeholder="Cidade">
+                  </div>
+                  <div class="col">
+                    <label for="nome">Estado:</label>
+                    <input type="text" ng-model="vm.estado" class="form-control col-sm-12" id="estado" placeholder="Estado">
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="cep.controller.js"></script>
+    <script src="cep.service.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="app" lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Consulta CEP</title>
+  </head>
+  <body>
+    <div class="container" ng-controller="app.MeuController as vm">
+      <div class="row justify-content-center">
+        <h1 class="col-sm-6 display-4 text-center">Consulta de CEP</h1>
+        <div class="w-100"></div>
+            <form class="col-sm-6">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="CEP" aria-label="cep" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button type="button" ng-click="vm.consultar()" class="btn btn-block btn-secondary btn-primary">Consultar</button>
+                </div>
+              </div>
+                <div class="form-group row">
+                  <div class="col">
+                    <label for="nome">Peso:</label>
+                    <input type="text" ng-model="vm.peso" class="form-control col-sm-12" id="peso" placeholder="Digite seu peso">
+                  </div>
+                  <div class="col">
+                    <label for="nome">Altura:</label>
+                    <input type="text" ng-model="vm.altura" class="form-control col-sm-12" id="altura" placeholder="Digite sua altura">
+                  </div>
+                </div>
+                <button type="button" ng-click="vm.calcular()" class="btn btn-block btn-secondary btn-primary">Calcular</button>
+            </form>
+        </div>
+        <div ng-repeat="rsp in vm.respostas" class="row col-sm-6 display-4 text-center">
+          {{rsp}}
+        </div>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="main.js"></script>
+    <script src="cep.controller.js"></script>
+    <script src="cep.service.js"></script>
+  </body>
+</html>
